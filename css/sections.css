@@ -264,6 +264,95 @@
 .service__time { font-size: 14px; line-height: 20px; font-weight: 500; color: var(--white); }
 .service__price { margin-left: auto; font-size: 16px; line-height: 24px; letter-spacing: -.16px; color: var(--white-60); }
 
+/* ======================================================= PRICE LIST ===== */
+.price-list { padding: 108px var(--gutter) 0; background: var(--bg); }
+.price-list__head { grid-template-columns: 1fr; }
+.price-list__head .price-list__head-main { grid-column: 1; }
+.price-list__title { font-size: 80px; line-height: 92px; letter-spacing: -1.6px; }
+
+.price-list__grid {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 80px;
+  row-gap: 48px;
+}
+.price-list__group-title {
+  font-family: var(--display);
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 600;
+  letter-spacing: -.2px;
+  color: var(--ink);
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+}
+.price-list__group-title--spaced { margin-top: 32px; }
+.price-list__items { margin-top: 20px; display: flex; flex-direction: column; gap: 14px; }
+.price-list__items li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--ink);
+}
+.price-list__items li > span:first-child { font-weight: 500; white-space: nowrap; }
+.price-list__items li > span:last-child { font-weight: 600; color: var(--price-grey); white-space: nowrap; }
+.price-list__dots {
+  flex: 1;
+  min-width: 12px;
+  height: 0;
+  border-bottom: 1px dotted rgba(0, 0, 0, .25);
+  transform: translateY(-5px);
+}
+.price-list__note { margin-top: 56px; padding-bottom: 108px; font-size: 14px; line-height: 20px; font-weight: 500; color: var(--body-grey-2); }
+
+/* ============================================================ COMBO ===== */
+.combo { padding: 0 var(--gutter) 120px; background: var(--bg); }
+.combo__card {
+  position: relative;
+  border-radius: 24px;
+  background: var(--ink);
+  padding: 56px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  overflow: hidden;
+}
+.combo__badge {
+  position: absolute;
+  top: 28px;
+  left: 60px;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 600;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  color: #f5b400;
+}
+.combo__items { display: flex; align-items: center; gap: 20px; flex: none; }
+.combo__item { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 108px; text-align: center; }
+.combo__icon {
+  width: 56px; height: 56px; flex: none;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: var(--white-10);
+  color: var(--white);
+}
+.combo__item-label { font-size: 14px; line-height: 18px; font-weight: 500; color: var(--white); }
+.combo__plus { font-family: var(--display); font-size: 24px; color: var(--white-60); flex: none; }
+
+.combo__deal { flex: 1; min-width: 0; padding-left: 20px; border-left: 1px solid var(--white-20); }
+.combo__deal-label { font-size: 14px; line-height: 20px; font-weight: 500; color: var(--white-60); }
+.combo__price { margin-top: 6px; font-size: 56px; line-height: 60px; letter-spacing: -1.6px; color: var(--white); }
+.combo__was { margin-top: 10px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.combo__strike { font-size: 16px; line-height: 22px; font-weight: 500; color: var(--white-60); text-decoration: line-through; }
+.combo__save { font-size: 13px; line-height: 18px; font-weight: 600; color: #f5b400; }
+
+.combo__cta { flex: none; }
+
 /* ======================================================== FRANCHISE ===== */
 .franchise { background: var(--bg); }
 .franchise__top { padding: 52px var(--gutter) 0; }
@@ -623,6 +712,19 @@
   .review-card { padding: 28px; width: 320px; }
   .review-card__quote { font-size: 22px; line-height: 30px; }
 
+  .price-list { padding-top: 72px; }
+  .price-list__title { font-size: 48px; line-height: 56px; }
+  .price-list__grid { margin-top: 40px; grid-template-columns: 1fr; row-gap: 40px; }
+  .price-list__note { margin-top: 40px; padding-bottom: 72px; }
+
+  .combo { padding-bottom: 72px; }
+  .combo__card { flex-direction: column; align-items: stretch; padding: 48px 28px 32px; gap: 28px; }
+  .combo__badge { position: static; display: block; margin-bottom: 4px; }
+  .combo__items { justify-content: center; flex-wrap: wrap; gap: 16px; }
+  .combo__deal { padding-left: 0; border-left: 0; text-align: center; }
+  .combo__was { justify-content: center; }
+  .combo__cta { align-self: center; }
+
   .stats { grid-template-columns: 1fr; margin-top: 24px; }
   .stat { min-height: 0; gap: 40px; }
 
@@ -662,6 +764,14 @@
   .about__avatars { margin-left: 0; }
   .about__meta { flex-wrap: wrap; }
   .stat__foot { flex-direction: column; align-items: flex-start; gap: 16px; }
+
+  .price-list__title { font-size: 40px; line-height: 46px; }
+  .price-list__items li { font-size: 15px; line-height: 22px; }
+  .price-list__note { font-size: 13px; }
+
+  .combo__items { gap: 12px; }
+  .combo__item { width: 88px; }
+  .combo__price { font-size: 44px; line-height: 48px; }
 }
 
 /* ====================================================== MOBILE NAV ====== */
